@@ -1,17 +1,17 @@
 // https://leetcode.com/problems/two-sum/description/
 
 function twoSum(nums: number[], target: number): number[] {
-    let valuelist = new Map<number,number>();
+    let valueList = new Map<number,number>();
     for(let i = 0; i< nums.length; i++) {
-        const valueSubstraction = target - nums[i];
-        if(valuelist.has(nums[i])) {
-            return [valuelist.get(nums[i])!, i]
+        const currentValue = target - nums[i];
+        if(valueList.has(nums[i])) {
+            return [valueList.get(nums[i])!, i]
             break;
         }
-        valuelist.set(valueSubstraction,i)
+        valueList.set(currentValue,i)
     }
     return [];
 };
 
-const twoSumresult = twoSum([1,3,5,7,4],11);
-console.log(twoSumresult);
+const twoSumResult = twoSum([1,3,5,7,4],11);
+console.log(twoSumResult);
